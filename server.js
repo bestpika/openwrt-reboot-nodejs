@@ -16,13 +16,10 @@ app.get('/reboot', function(request, response) {
     response.writeHead(200, {
         "Content-Type": "text/plain"
     });
-    response.write("Server Reboot!");
     console.log('Server Reboot!');
-    var now = Date.now();
-    while (Date.now() < now + 10000);
-    exec('sync; reboot &');
+    response.write("Server Reboot!");
     response.end();
-    // request.connection.destroy();
+    exec('sync; reboot &');
     process.exit();
 });
 
