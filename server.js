@@ -17,7 +17,8 @@ app.get('/reboot', function(request, response) {
         "Content-Type": "text/plain"
     });
     response.write("Server Reboot!");
-    exec('sync; sync; sync; reboot');
+    console.log('Server Reboot!')
+    exec('sync; reboot &');
     response.end();
 });
 
