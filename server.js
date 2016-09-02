@@ -20,6 +20,7 @@ app.get('/reboot', function(request, response) {
     console.log('Server Reboot!')
     exec('sync; reboot &');
     response.end();
+    server.close();
 });
 
 server.listen(8888, '0.0.0.0', function() {
