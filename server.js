@@ -10,6 +10,7 @@ app.get('/', function(request, response) {
     });
     response.write("Server On!");
     response.end();
+    request.connection.destroy();
 });
 
 app.get('/reboot', function(request, response) {
@@ -19,6 +20,7 @@ app.get('/reboot', function(request, response) {
     console.log('Server Reboot!');
     response.write("Server Reboot!");
     response.end();
+    request.connection.destroy();
     exec('sync; reboot &');
     process.exit();
 });
