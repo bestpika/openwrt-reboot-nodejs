@@ -16,7 +16,7 @@ app.get('/reboot', function(request, response) {
     });
     response.write("Server Reboot!");
     response.end();
-    // exec('sync; reboot &');
+    exec('sync; reboot');
     process.exit();
 });
 
