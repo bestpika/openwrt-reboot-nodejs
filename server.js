@@ -25,6 +25,6 @@ app.get('/reboot', function(request, response) {
     process.exit();
 });
 
-server.listen(8888, '0.0.0.0', function() {
+server.listen(8888, '192.168.1.99', function() {
     console.log('Server On!');
 });
